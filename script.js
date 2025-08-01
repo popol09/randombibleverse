@@ -86,3 +86,10 @@ newQuote.addEventListener("click", () => {
   text.textContent = quotes[randomNum]["quote"]
   author.textContent = quotes[randomNum]["author"]
 })
+
+// Show a random verse on page load
+window.addEventListener("DOMContentLoaded", () => {
+  const randomNum = Math.floor(Math.random() * quotes.length)
+  text.textContent = quotes[randomNum]["quote"]
+  author.textContent = quotes[randomNum]["author"]
+})

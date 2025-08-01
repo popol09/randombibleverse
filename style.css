@@ -1,50 +1,60 @@
 /* Replace SCSS variables with CSS variables */
 :root {
   --text-color: #1d1e22;
-  --bg-color: #4dd0a7;
+  --bg-color: oklab(77.47500000000001% -0.12707 0.02522);
   --bg-color2: white;
   --text-font: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
 }
 
-body{
+body {
   background-color: var(--bg-color);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
-#quote-box{
+
+#quote-box {
   padding: 20px;
-  width: 500px;
-  margin: 50px auto 0px auto;
+  width: 90%;
+  max-width: 500px;
+  margin: 50px auto 0 auto;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   background-color: var(--bg-color2);
+  box-sizing: border-box;
 }
 
-#text, #author{
+#text, #author {
   font-family: var(--text-font);
   color: var(--text-color);
+  word-break: break-word;
 }
 
-#text{
-  font-size: 20px;
+#text {
+  font-size: 1.2em;
   text-align: center;
   margin-bottom: 20px;
 }
 
-#author{
+#author {
   text-align: right;
   margin-bottom: 10px;
+  font-size: 1em;
 }
 
-#new-quote{
+#new-quote {
   background: linear-gradient(to right, #ff416c, #ff4b2b);
   border: none;
   color: white;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
-  margin: 0px auto 0px auto;
+  font-size: 1em;
+  margin: 0 auto;
   cursor: pointer;
   border-radius: 5px;
+  display: block;
 }
 
 a {
@@ -52,7 +62,7 @@ a {
   padding: 10px 20px;
   background: linear-gradient(to right, #1DA1F2, #0F1419);
   color: white;
-  font-size: 16px;
+  font-size: 1em;
   text-decoration: none;
   border-radius: 5px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
@@ -68,15 +78,41 @@ h1, p {
 }
 
 h1 {
-  font-size: 2.5em;
-  color: #fcfcfc;
+  font-size: 2em;
+  color: #ffffff;
   margin-top: 30px;
   margin-bottom: 10px;
 }
 
 p {
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: #333;
   margin-bottom: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  #quote-box {
+    padding: 10px;
+    margin-top: 20px;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+  #text {
+    font-size: 1em;
+  }
+  #author {
+    font-size: 0.95em;
+  }
+  #new-quote, a {
+    font-size: 0.95em;
+    padding: 8px 12px;
+  }
+  p {
+    font-size: 1em;
+  }
 }
 
